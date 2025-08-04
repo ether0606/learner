@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link,useLocation } from 'react-router'
 
 function Header(){
     return(
@@ -11,8 +12,9 @@ function Header(){
 
       <nav id="navmenu" className="navmenu">
         <ul>
-          <li><a href="index.html" className="active">Home<br/></a></li>
-          <li><a href="about.html">About</a></li>
+          <li><Link to={"/"}>Home</Link></li>
+          <li><Link to={"/about"}>About</Link>
+            </li>
           <li><a href="courses.html">Courses</a></li>
           <li><a href="trainers.html">Trainers</a></li>
           <li><a href="events.html">Events</a></li>
