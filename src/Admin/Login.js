@@ -23,7 +23,7 @@ function Login() {
       if(response.data.jwt){
             localStorage.setItem("access_token", response.data.jwt);
             localStorage.setItem("userdata", response.data.datas);
-            navigate('/admin/dashboard')
+            window.location.href='/admin/dashboard';
         }else{
             alert(response.data.message);
         }
