@@ -21,8 +21,12 @@ function Login() {
       });
 
       if(response.data.jwt){
-            localStorage.setItem("access_token", response.data.jwt);
-            localStorage.setItem("userdata", response.data.datas);
+          /* if you want, user will be logged in until they logout*/
+          //localStorage.setItem("access_token", response.data.jwt);
+          //localStorage.setItem("userdata", response.data.datas);
+          /* if you want, user will be logged when they close the browser*/
+          sessionStorage.setItem("access_token", response.data.jwt);
+          sessionStorage.setItem("userdata", response.data.datas);
             window.location.href='/admin/dashboard';
         }else{
             alert(response.data.message);

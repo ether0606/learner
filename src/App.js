@@ -14,7 +14,10 @@ import Protected from './Admin/protected';
 
 function App() {
   const [ isSignedIn, setIsSignedIn ] = useState(()=> {
-    return localStorage.getItem("access_token") || false;
+    /* if you want, user will be logged in until they logout*/
+    //return localStorage.getItem("access_token") || false;
+    /* if you want, user will be logged when they close the browser*/
+    return sessionStorage.getItem("access_token") || false;
   });
   
   return (
