@@ -20,6 +20,12 @@ function Header(){
                   <li className="nav-item">
                     <Link className="nav-link" to={"/admin/user"}>User</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/admin/categories"}>Categories</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/admin/courses"}>Courses</Link>
+                  </li>
                   
                 </ul>
                 <button className="btn btn-link" onClick={logout}>Logout</button>

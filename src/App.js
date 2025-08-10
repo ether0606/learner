@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import About from './pages/About';
 import Home from './pages/Home';
+import Courses_page from './pages/Courses_page';
 
 /* admin route */
 import Login from './Admin/Login';
 import Register from './Admin/Register';
 import Dashboard from './Admin/Dashboard';
 import Users from './Admin/Users';
-import Useradd from './Admin/Useradd';
+import Categories from './Admin/Categories';
+import Courses from './Admin/Courses';
 import Protected from './Admin/protected';
 
 
@@ -25,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/course" element={<Courses_page />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           
@@ -39,7 +42,16 @@ function App() {
               <Users /> 
            </Protected>
            } />
-          <Route path="/admin/add-user" element={<Useradd />} />
+          <Route path= {"/admin/categories"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Categories /> 
+           </Protected>
+           } />
+          <Route path= {"/admin/courses"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Courses /> 
+           </Protected>
+           } />
         </Routes>
     </>
   );
