@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
+
+import { CartProvider, useCart } from "react-use-cart";
 import About from './pages/About';
 import Home from './pages/Home';
 import Courses_page from './pages/Courses_page';
@@ -23,7 +25,7 @@ function App() {
   });
   
   return (
-    <>
+      <CartProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -53,7 +55,7 @@ function App() {
            </Protected>
            } />
         </Routes>
-    </>
+    </CartProvider>
   );
 }
 

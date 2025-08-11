@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Weblayout from '../layout/Weblayout';
 import axios from '../Admin/component/axios';
-import { useCart } from "react-use-cart";
+import { CartProvider, useCart } from "react-use-cart";
 function Courses_page() {
 const [courses,setCourses]=useState([]);
    useEffect(() => {
@@ -13,8 +13,9 @@ const [courses,setCourses]=useState([]);
        setCourses(res.data);
      }
 
-     const { addItem } = useCart();
+     const {addItem} = useCart();
   return (
+    
     <Weblayout>
       <main class="main">
         <div class="page-title">
